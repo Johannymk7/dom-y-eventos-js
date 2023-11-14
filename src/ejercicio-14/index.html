@@ -7,9 +7,24 @@
   </head>
   <body>
     <!-- Escribe tu codigo html aqui -->
+    <div id=elementoPadre">
+      <div id="elementoHijo">Haz clic aquí</div>
+    </div>
 
     <script>
       // Escribe tu codigo javascript aqui
+      const elementoHijo = document.getElementById('elementoHijo')
+      elementoHijo.addEventListener('click', (eveto) => {
+        eveto.stopImmediatePropagation()
+        alert('Evento hijo')
+      })
+
+      const elementoPadre = document.getElementById('elementoPadre')
+      elementoPadre.addEventListener('click', (eveto) => {
+        alert('Evento Padre')
+      })
+
+
     </script>
   </body>
 </html>
